@@ -25,21 +25,46 @@ def main():
         match choice: 
             case "1":
             # Add product
-            pass
+            product_id = input("Enter product ID: ")
+                name = input("Enter product name: ")
+                quantity = int(input("Enter quanitity: "))
+                price = float(input("Enter price: "))
+                product = Product(product_id, name, quantity, price)
+                inventory.add_product(product)
+                print("Product added!")
+
          case "2":
             # Sell product
-            pass
+            product_id = input("Enter product ID to sell: ")
+                amount = int(input("Enter amount to sell: "))
+                result = inventory.sell_product(product_id, amount)
+                if result is None: 
+                    print("Product not found.")
+                elif result: 
+                    print("Sale successful!")
+                else: print("Not enough stock!")
+                    
         case "3":
             # Restock product
-            pass
+            product_id = input("Enter product ID to restock: ")
+                amount = int(input("Enter amount to add: "))
+                success = inventory.restock_product(product_id, amount)
+                if success: 
+                    print("Restocked!")
+                else: 
+                    print("Product not found.")
+                    
         case "4":
             # Show products
-            pass
+            inventory.print_all_products()
+
         case "5":
             # Save and exit
-            pass
+            inventory.save_to_file(filename)
+                print("Inventory saved. Goodbye!")
+
         case _:
             print("Invalid choice. Try again.")
 
-
-#Students must fill each pass section correctly, using the Inventory class methods.
+if __name__ == "__main__":
+    main() #runs the program
