@@ -1,6 +1,6 @@
 #Comments at top 
-# Name: Nika
-# Date: 12/13/2025
+#Name: Nika
+#Date: 12/13/2025
 '''
 Program Description: This file defines the Product class, which represents individual items in the inventory system. 
 Inputs to the class include product details such as ID, name, quantity, and price, and are collected later in the program in a seperate document (part 3) provided when creating a new Product object. 
@@ -29,6 +29,3 @@ class Product:
 
     def __str__(self):
         return f"{self.product_id} | {self.name: <10} | Qty: {self.quantity: <2} | ${self.price:.2f}"
-
-
-
