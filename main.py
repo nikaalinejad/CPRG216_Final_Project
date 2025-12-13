@@ -1,5 +1,18 @@
+#Comments at top 
+#Name: Nika Alinejad
+#Date: 12/13/2025
+'''
+Program Description: This program implements a mini inventory management system that allows the user to add new products, sell existing products, restock items, and display all products currently in stock. 
+This part of the program (part 3) prompts the user to input their choices for editing the inventory system, wherein the program collects data such as product IDs, names, quantity of products, the price.
+All inputs are entered through the keyboard and will only continue until a valid input / input that the program can procss is entered.
+The program processes these inputs by updating an inventory object, performing operations like adding, selling, or restocking products, and validating conditions such as product existence or sufficient stock. 
+Outputs are displayed to the user in the form of confirmation messages, error notifications, and a printed list of all products. When the user chooses to exit, the program saves the inventory data to a file for future use.
+'''
+
 #Part 3 - Main Program (main.py)
-#driver of the entire program 
+#This segment of the project serves the purpose of being the driver of the entire program 
+#The classes from inventory.py and product.py are imported and used when the main() is run
+#In the main function information is collected to then be able to be processed by the program all together to provide meaningful output for the user. 
 
 from inventory import Inventory
 from product import Product
@@ -68,5 +81,3 @@ def main():
 
 if __name__ == "__main__":
     main() #runs the program
-
-
