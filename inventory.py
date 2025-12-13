@@ -2,52 +2,49 @@
 
 from product import Product 
 
-#inventory class manages multiple product objects 
 class Inventory: 
-    def __init(self):
-        #no parameters 
-        #returns none
-        #creates an empty products list 
-        pass
+    def __init__(self):
+        self.products = [] #creates an empty products list 
 
-    def load_from_file(self,filename):
-        #parameters is a sring
-        #returns none 
-        #Read file lines formatted as: ID,Name,Quantity,Price. Create Product objects and append.
-        pass
+    def load_from_file(self, filename):
+        with open(filename, 'r') as file:
+            for line in file: 
+                parts = line.strip().split(',')
+                if len(parts) == 4:
+                    product_id = parts[0]
+                    name = parts[1]
+                    quantity = int(parts[2])
+                    price = float(parts[3])
+                    product = Product(product_id, name, quantity, price)
+                    self.products.append(product)
     
     def save_to_file(self, filename):
-        #accepts string
-        #returns none 
-        #Save all products back to file in the same CSV format.
-        pass
+        with open(filename, 'w') as file:
+            for product in self.products:
+                line = f"{product.product_id},{product.name},{product.quantity},{product.price:.2f}\n"
+                file.write(line)
 
     def add_product(self, product):
-        #parameter is product 
-        #returns none 
-        #appends the give product to products list.
-        pass
+        self.products.append(product)
 
     def find_product(self, product_id):
-        #parameter is string 
-        #returns product or none 
-        #Return the product with matching ID or None if not found.
-        pass
+        for product in self.products:
+            if product.product_id == product_id:
+                return product
 
     def sell_product(self, product_id, amount):
-        #parameter is str, int
-        #returns true/false/none
-        #return None if product not found; else return Product.sell(amount).
-        pass
+        product = self.find_product(product_id)
+        if product is None:
+            return None
+        return product.sell(amount)
 
     def restock_product(self, product_id, amount):
-        #parameter is str, int
-        #returns true/false
-        #Restock if found and return True; otherwise return False.
-        pass
+        product = self.find_product(product_id)
+        if product is None: 
+            return False
+        product.restock(amount)
+        return True
 
     def print_all_products(self):
-        #no parameters 
-        #return none
-        #Print each product using its __str__() output.
-        pass
+        for product in self.products:
+            print(product)
