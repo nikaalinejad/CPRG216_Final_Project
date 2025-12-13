@@ -1,3 +1,14 @@
+#Comments at top
+#Name: Nika
+#Date: 12/13/2025
+'''
+Program Description: This file defines the Inventory class, which manages a collection of Product objects within the mini inventory system. 
+Inputs include product data loaded from a file or entered by the user, such as product ID, name, quantity, and price which become useful in part 3 when inputs are collected from the user. 
+The class processes these inputs by storing products in a list and providing methods to add new products, find existing ones, sell items, and restock quantities. 
+It also handles saving updated inventory data back to a file, ensuring persistence between program runs. 
+Outputs are generated through method results (e.g., True/False for restock or sale success, None if product not found and printed product listings that display the current state of the inventory in a clear format.
+'''
+
 #Part 2 - Inventory Class (inventory.py)
 
 from product import Product 
@@ -50,7 +61,3 @@ class Inventory:
         for product in self.products:
             print(product)
         print()
-
-
-
-
