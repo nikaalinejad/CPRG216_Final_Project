@@ -60,7 +60,7 @@ def main():
             case "3":
                 # Restock product
                     product_id = input("Enter product ID to restock: ")
-                    amount = int(input("Enter amount to add: "))
+                    amount = int(input("Enter restock amount: "))
                     success = inventory.restock_product(product_id, amount)
                     if success: 
                         print("\nRestocked!\n")
@@ -81,3 +81,4 @@ def main():
 
 if __name__ == "__main__":
     main() #runs the program
+
