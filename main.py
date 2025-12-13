@@ -31,7 +31,7 @@ def main():
                 price = float(input("Enter price: "))
                 product = Product(product_id, name, quantity, price)
                 inventory.add_product(product)
-                print("Product added!")
+                print("Product added!\n")
 
             case "2":
                 # Sell product
@@ -39,10 +39,10 @@ def main():
                     amount = int(input("Enter amount to sell: "))
                     result = inventory.sell_product(product_id, amount)
                     if result is None: 
-                        print("Product not found.")
+                        print("\nProduct not found.\n")
                     elif result: 
-                        print("Sale successful!")
-                    else: print("Not enough stock!")
+                        print("\nSale successful!\n")
+                    else: print("\nNot enough stock!\n")
                     
             case "3":
                 # Restock product
@@ -50,9 +50,9 @@ def main():
                     amount = int(input("Enter amount to add: "))
                     success = inventory.restock_product(product_id, amount)
                     if success: 
-                        print("Restocked!")
+                        print("\nRestocked!\n")
                     else: 
-                        print("Product not found.")
+                        print("\nProduct not found.\n")
                     
             case "4":
                 # Show products
@@ -68,4 +68,5 @@ def main():
 
 if __name__ == "__main__":
     main() #runs the program
+
 
