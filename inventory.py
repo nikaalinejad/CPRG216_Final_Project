@@ -49,6 +49,8 @@ class Inventory:
         print("\n--- Inventory List ---")
         for product in self.products:
             print(product)
+        print()
+
 
 
 
