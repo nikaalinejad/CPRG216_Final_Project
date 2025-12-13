@@ -18,4 +18,5 @@ class Product:
         self.quantity += amount 
 
     def __str__(self):
-        return f"{self.product_id} | {self.name} | Qty: {self.quantity} | ${self.price:.2f}"
+        return f"{self.product_id} | {self.name: <10} | Qty: {self.quantity: <3} | ${self.price:.2f}"
+
