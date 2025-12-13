@@ -47,8 +47,6 @@ class Inventory:
         for product in self.products:
             if product.product_id == product_id:
                 return product
-            else: 
-                return None
 
     def sell_product(self, product_id, amount):
         product = self.find_product(product_id)
@@ -69,4 +67,5 @@ class Inventory:
         for product in self.products:
             print(product)
         print()
+
 
