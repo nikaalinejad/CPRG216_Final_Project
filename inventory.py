@@ -46,7 +46,9 @@ class Inventory:
         return True
 
     def print_all_products(self):
+        print("\n--- Inventory List ---")
         for product in self.products:
             print(product)
+
 
 
