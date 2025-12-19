@@ -1,9 +1,9 @@
-This is a "Mini Inventory System" programmed using Python.
+This is a "Mini Inventory System" programmed using Python:
 
-This is the final project in Object-Oriented 1 CPRG216 dual credit course at SAIT. (I got 100 btw!)
+Final project in Object-Oriented 1 CPRG216 dual credit course at SAIT. (I got 100 btw!)
 
-The system uses two classes (Product and Inventory) and basic file I/O. 
-Concepts from CPRG216 are used such as variables, loops, conditionals, lists, functions, classes, and basic file input/output.
+The system uses two classes (Product and Inventory)
+As well as other concepts such as variables, loops, conditionals, lists, functions, classes, and basic file I/O.
 
 What the project does: allows the user to load products from a file, allow the user to add, sell, and restock products, display all
 products, and save the updated data back to the file when the program exits.
