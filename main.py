@@ -1,13 +1,4 @@
-#Comments at top 
-#Name: Nika Alinejad
-#Date: 12/13/2025
-'''
-Program Description: This program implements a mini inventory management system that allows the user to add new products, sell existing products, restock items, and display all products currently in stock. 
-This part of the program (part 3) prompts the user to input their choices for editing the inventory system, wherein the program collects data such as product IDs, names, quantity of products, the price.
-All inputs are entered through the keyboard and will only continue until a valid input / input that the program can procss is entered.
-The program processes these inputs by updating an inventory object, performing operations like adding, selling, or restocking products, and validating conditions such as product existence or sufficient stock. 
-Outputs are displayed to the user in the form of confirmation messages, error notifications, and a printed list of all products. When the user chooses to exit, the program saves the inventory data to a file for future use.
-'''
+#last edit: 12/13/2025
 
 #Part 3 - Main Program (main.py)
 #This segment of the project serves the purpose of being the driver of the entire program 
@@ -20,7 +11,7 @@ from product import Product
 def main():
     inventory = Inventory()
     filename = "inventory.csv"
-     # Load existing data
+     #load existing data
     inventory.load_from_file(filename)
 
     #I'm swtiching the skeleton template which includes while true, to a different control/loop/whatever since the assignment prefers not to use while True or while flag particularly if there is a clear loop condition(s)
@@ -37,7 +28,7 @@ def main():
 
         match choice: 
             case "1":
-            # Add product
+            #add product
                 product_id = input("Enter product ID: ")
                 name = input("Enter product name: ")
                 quantity = int(input("Enter quanitity: "))
@@ -47,7 +38,7 @@ def main():
                 print("Product added!\n")
 
             case "2":
-                # Sell product
+                #sell product
                     product_id = input("Enter product ID to sell: ")
                     amount = int(input("Enter amount to sell: "))
                     result = inventory.sell_product(product_id, amount)
@@ -58,7 +49,7 @@ def main():
                     else: print("\nNot enough stock!\n")
                     
             case "3":
-                # Restock product
+                #restock product
                     product_id = input("Enter product ID to restock: ")
                     amount = int(input("Enter restock amount: "))
                     success = inventory.restock_product(product_id, amount)
@@ -80,5 +71,5 @@ def main():
                 print("Invalid choice. Try again.")
 
 if __name__ == "__main__":
-    main() #runs the program
+    main() #run
 
